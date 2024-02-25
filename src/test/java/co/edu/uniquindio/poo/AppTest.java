@@ -8,6 +8,8 @@
 package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import java.util.logging.Logger;
 
 import org.junit.jupiter.api.Test;
@@ -37,4 +39,12 @@ public class AppTest {
 
         LOG.info("Finalizando test datos completos");
     }
+    @Test
+    public void datosNulos(){
+        LOG.info("Iniciado test datos nulos");
+        assertThrows(Throwable.class, () -> new Mascota(null, null, null, null, "macho", null, (double) 5));
+
+        LOG.info("Finalizando test datos nulos");
+    }
+    
 }
