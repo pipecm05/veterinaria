@@ -52,4 +52,10 @@ public class AppTest {
         assertThrows(Throwable.class, () -> new Mascota("miguel", "perro", "", (byte) 5, "macho", "", (double) 5));
         LOG.info("Finalizando test datos vacios");
     }
+    @Test
+    public void cantidadesNegativas(){
+        LOG.info("Iniciado test cantidades negativas");
+        assertThrows(Throwable.class, () -> new Mascota("miguel", "perro", "pincher", (byte) -5, "macho", "negro", (double) -5));
+        LOG.info("Finalizando test cantidades negativas");
+    }
 }
