@@ -46,5 +46,10 @@ public class AppTest {
 
         LOG.info("Finalizando test datos nulos");
     }
-    
+    @Test
+    public void datosVacios(){
+        LOG.info("Iniciado test datos vacios");
+        assertThrows(Throwable.class, () -> new Mascota("miguel", "perro", "", (byte) 5, "macho", "", (double) 5));
+        LOG.info("Finalizando test datos vacios");
+    }
 }

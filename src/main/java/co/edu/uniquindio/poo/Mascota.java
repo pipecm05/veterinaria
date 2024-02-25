@@ -8,6 +8,8 @@ public record Mascota(String nombre,String especie, String raza, Byte edad ,Stri
         assert raza != null;
         assert genero != null;
         assert color != null;
+        assert raza != "";
+        assert color != "";
     }
 
 }
