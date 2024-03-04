@@ -17,8 +17,8 @@ import org.junit.jupiter.api.Test;
 /**
  * Unit test for simple App.
  */
-public class AppTest {
-    private static final Logger LOG = Logger.getLogger(AppTest.class.getName());
+public class MascotaTest {
+    private static final Logger LOG = Logger.getLogger(MascotaTest.class.getName());
 
     /**
      * Rigorous Test :-)
@@ -27,7 +27,7 @@ public class AppTest {
      @Test
      public void datosCompletos() {
         LOG.info("Iniciado test datos completos");
-        final Mascota mascota = new Mascota("miguel", "perro", "pincher", (byte) 5, "macho", "negro", (double) 5);
+        final Mascota mascota = new Mascota("miguel","123456", "perro", "pincher", (byte) 5, "macho", "negro", (double) 5);
         
         assertEquals("miguel", mascota.nombre());
         assertEquals("perro", mascota.especie());
@@ -42,20 +42,20 @@ public class AppTest {
     @Test
     public void datosNulos(){
         LOG.info("Iniciado test datos nulos");
-        assertThrows(Throwable.class, () -> new Mascota(null, null, null, null, "macho", null, (double) 5));
+        assertThrows(Throwable.class, () -> new Mascota(null,null, null, null, null, "macho", null, (double) 5));
 
         LOG.info("Finalizando test datos nulos");
     }
     @Test
     public void datosVacios(){
         LOG.info("Iniciado test datos vacios");
-        assertThrows(Throwable.class, () -> new Mascota("miguel", "perro", "", (byte) 5, "macho", "", (double) 5));
+        assertThrows(Throwable.class, () -> new Mascota("miguel", "123456", "perro", "", (byte) 5, "macho", "", (double) 5));
         LOG.info("Finalizando test datos vacios");
     }
     @Test
     public void cantidadesNegativas(){
         LOG.info("Iniciado test cantidades negativas");
-        assertThrows(Throwable.class, () -> new Mascota("miguel", "perro", "pincher", (byte) -5, "macho", "negro", (double) -5));
+        assertThrows(Throwable.class, () -> new Mascota("miguel","123456", "perro", "pincher", (byte) -5, "macho", "negro", (double) -5));
         LOG.info("Finalizando test cantidades negativas");
     }
 }
